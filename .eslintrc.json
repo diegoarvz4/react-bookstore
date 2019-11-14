@@ -16,5 +16,7 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "import/no-unresolved": "off"
+  }
 }
