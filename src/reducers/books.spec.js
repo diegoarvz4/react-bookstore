@@ -24,4 +24,24 @@ describe('Testing the book reducer', () => {
     const result = reducer(initialState, action);
     expect(result).toEqual(expectedState);
   });
+
+  it('Removes a book when the REMOVE BOOK action is passed', () => {
+    const initialState = {
+      books: [
+        { id: 1, title: 'Cañitas', category: 'Horror' },
+        { id: 2, title: 'It', category: 'Horror' },
+        { id: 3, title: 'Hellraiser', category: 'Horror' },
+      ],
+    };
+    const expectedState = {
+      books: [
+        { id: 1, title: 'Cañitas', category: 'Horror' },
+        { id: 3, title: 'Hellraiser', category: 'Horror' },
+      ],
+    };
+    const action = { type: 'REMOVE_BOOK', payload: 2 };
+    const result = reducer(initialState, action);
+    console.log(result)
+    expect(result).toEqual(expectedState);
+  });
 });
