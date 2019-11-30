@@ -1,7 +1,34 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
+import Book from '../Book/Book';
 
-export default () => {
+const BooksList = (props) => {
+  const { books } = props;
+
   return (
-    <div/>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            books.map((book) => <Book key={book.id} id={book.id} title={book.title} category={book.category} />)
+          }
+        </tbody>
+      </table>
+    </div>
   );
-}
+};
+
+const mapStateToProps = (state) => {
+  return {
+    books: state.booksReducer.books,
+  };
+};
+
+export default connect(mapStateToProps)(BooksList);

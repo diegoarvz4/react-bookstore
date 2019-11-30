@@ -41,7 +41,6 @@ describe('Testing the book reducer', () => {
     };
     const action = { type: 'REMOVE_BOOK', payload: 2 };
     const result = reducer(initialState, action);
-    console.log(result)
     expect(result).toEqual(expectedState);
   });
 });
