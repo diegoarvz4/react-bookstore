@@ -7,8 +7,8 @@ export default () => {
   return (
     <div className="bookForm">
       <form>
-        <label htmlFor="title" id="title">Title</label>
-        <input type="text" name="title" placeholder="Please enter the name of the book" />
+        <label htmlFor="title">Title</label>
+        <input type="text" id="title" name="title" placeholder="title" />
         <select name="" id="">
           {
             bookCategories.map(cat => (
