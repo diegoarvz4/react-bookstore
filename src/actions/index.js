@@ -8,6 +8,6 @@ export default {
   removeBook: (state, action) => (
     {
       ...state,
-      books: state.books.filter((book) => book.id !== action.payload),
+      books: state.books.filter(book => book.id !== action.payload),
     }),
 };

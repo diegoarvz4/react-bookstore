@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
 import reducer from './books';
 
 describe('Testing the book reducer', () => {
   it('Is defined when nothing is passed', () => {
-    expect(reducer(undefined, {type:'Anything'})).toBeDefined();
+    expect(reducer(undefined, { type: 'Anything' })).toBeDefined();
   });
   it('Adds a book when the ADD BOOK action is passed', () => {
     const initialState = {

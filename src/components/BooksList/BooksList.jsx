@@ -23,7 +23,7 @@ const BooksList = (props) => {
         </thead>
         <tbody>
           {
-            books.map((book) => <Book key={uuid()} id={book.id} title={book.title} category={book.category} />)
+            books.map(book => <Book key={uuid()} id={book.id} title={book.title} category={book.category} />)
           }
         </tbody>
       </table>
@@ -31,7 +31,7 @@ const BooksList = (props) => {
   );
 };
 
-const mapStateToProps = (state) => (
+const mapStateToProps = state => (
   {
     books: state.booksReducer.books,
   }

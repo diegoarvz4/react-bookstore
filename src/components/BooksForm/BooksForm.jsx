@@ -7,11 +7,11 @@ export default () => {
   return (
     <div className="bookForm">
       <form>
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title" id="title">Title</label>
         <input type="text" name="title" placeholder="Please enter the name of the book" />
         <select name="" id="">
           {
-            bookCategories.map((cat) => (
+            bookCategories.map(cat => (
               <option key={uuid()} value={cat}>{cat}</option>
             ))
           }
