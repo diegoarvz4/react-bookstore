@@ -1,8 +1,6 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-import BooksForm from '../BooksForm/BooksForm';
-
 
 const Book = (props) => {
   const { id, title, category } = props;
