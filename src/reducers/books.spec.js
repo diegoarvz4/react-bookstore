@@ -21,7 +21,7 @@ describe('Testing the book reducer', () => {
         { id: 4, title: 'The Raven', category: 'Horror' },
       ],
     };
-    const action = { type: 'ADD_BOOK', payload: { id: 4, title: 'The Raven', category: 'Horror' } };
+    const action = { type: 'ADD_BOOK', book: { id: 4, title: 'The Raven', category: 'Horror' } };
     const result = reducer(initialState, action);
     expect(result).toEqual(expectedState);
   });
@@ -40,7 +40,7 @@ describe('Testing the book reducer', () => {
         { id: 3, title: 'Hellraiser', category: 'Horror' },
       ],
     };
-    const action = { type: 'REMOVE_BOOK', payload: 2 };
+    const action = { type: 'REMOVE_BOOK', id: 2 };
     const result = reducer(initialState, action);
     expect(result).toEqual(expectedState);
   });

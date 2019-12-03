@@ -33,7 +33,7 @@ const BooksList = (props) => {
 
 const mapStateToProps = state => (
   {
-    books: state.booksReducer.books,
+    books: state.booksReducer,
   }
 );
 

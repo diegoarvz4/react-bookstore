@@ -1,17 +1,31 @@
 import actionTypes from '../actions/actionTypes';
 
-const booksReducer = (state = {}, action) => {
+const generateID = () => parseInt(Math.random() * 100, 10);
+
+const initialState = [
+  {
+    id: generateID(),
+    title: 'The Catcher in the Rye',
+    category: 'Realistic Fiction',
+  },
+  {
+    id: generateID(),
+    title: 'Lord of the Flies',
+    category: 'Allegorical Novel',
+  },
+  {
+    id: generateID(),
+    title: 'Crime and Punishment',
+    category: 'Philosofical Novel',
+  },
+];
+
+const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.addBook:
-      return {
-        ...state,
-        books: [...state.books, action.book],
-      };
+      return [...state, action.book];
     case actionTypes.removeBook:
-      return {
-        ...state,
-        books: state.books.filter(book => book.id !== action.id),
-      };
+      return [...state.filter(book => book.id !== action.id)];
     default:
       return state;
   }

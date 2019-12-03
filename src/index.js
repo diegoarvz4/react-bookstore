@@ -5,11 +5,11 @@ import './index.css';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer, { initialState } from './reducers/index';
+import rootReducer from './reducers/index';
 
 import App from './App';
 
-const store = createStore(rootReducer, { booksReducer: initialState });
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
