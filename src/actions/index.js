@@ -1,13 +1,17 @@
-export default {
-  addBook: (state, action) => (
-    {
-      ...state,
-      books: [...state.books, action.payload],
-    }
-  ),
-  removeBook: (state, action) => (
-    {
-      ...state,
-      books: state.books.filter(book => book.id !== action.payload),
-    }),
-};
+import actionTypes from './actionTypes';
+
+const addBook = (book) => (
+  {
+    type: actionTypes.addBook,
+    book,
+  }
+);
+
+const removeBook = (id) => (
+  {
+    type: actionTypes.removeBook,
+    id,
+  }
+);
+
+export { addBook, removeBook };

@@ -6,7 +6,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../Book/Book';
-
+import { addBook } from '../../actions/index';
 
 const BooksList = (props) => {
   const { books } = props;
@@ -37,8 +37,14 @@ const mapStateToProps = state => (
   }
 );
 
+const mapDispatchToProps = dispatch => (
+  {
+    addBook: book => dispatch(addBook(book)),
+  }
+);
+
 BooksList.propTypes = {
   books: PropTypes.array.isRequired,
 };
 
-export default connect(mapStateToProps)(BooksList);
+export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
