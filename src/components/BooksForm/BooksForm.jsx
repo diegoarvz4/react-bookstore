@@ -1,8 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import uuid from 'uuid';
-import PropTypes from 'propTypes';
+import PropTypes from 'prop-types';
 import { addBook } from '../../actions/index';
 import genID from '../../lib/generateID';
 
