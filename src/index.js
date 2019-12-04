@@ -9,7 +9,6 @@ import rootReducer, { initialState } from './reducers/index';
 import App from './App';
 
 const store = createStore(rootReducer, initialState);
-store.subscribe(() => console.log(store.getState()));
 
 ReactDOM.render(
   <Provider store={store}>
