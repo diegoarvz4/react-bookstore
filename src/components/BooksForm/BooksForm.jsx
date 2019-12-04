@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addBook } from '../../actions/index';
 import uuid from 'uuid';
+import PropTypes from 'propTypes';
+import { addBook } from '../../actions/index';
 import genID from '../../lib/generateID';
 
 class BookForm extends Component {
@@ -11,7 +12,7 @@ class BookForm extends Component {
     this.state = {
       title: '',
       category: '',
-      bookCategories: ['','Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'],
+      bookCategories: ['', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'],
     };
   }
 
@@ -21,7 +22,7 @@ class BookForm extends Component {
       this.setState({
         category: currentCategory,
       });
-    } else 
+    } else
     if (event.target.id === 'title') {
       this.setState({
         title: currentCategory,
@@ -32,16 +33,17 @@ class BookForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { title, category } = this.state;
+    const { createBook } = this.props;
     const book = {
       id: genID(),
       title,
-      category
-    }
-    this.props.addBook(book);
+      category,
+    };
+    createBook(book);
     this.setState({
       title: '',
-      category: ''
-    })
+      category: '',
+    });
   }
 
   render() {
@@ -65,10 +67,13 @@ class BookForm extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addBook: (book) => dispatch(addBook(book)),
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  createBook: (book) => dispatch(addBook(book)),
+});
+
+
+BookForm.propTypes = {
+  createBook: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(BookForm);
