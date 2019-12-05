@@ -1,22 +1,21 @@
 import { combineReducers } from 'redux';
 import books from './books';
-
-const generateID = () => parseInt(Math.random() * 100, 10);
+import genID from '../lib/generateID';
 
 export const initialState = {
   books: [
     {
-      id: generateID(),
+      id: genID(),
       title: 'The Catcher in the Rye',
       category: 'Realistic Fiction',
     },
     {
-      id: generateID(),
+      id: genID(),
       title: 'Lord of the Flies',
       category: 'Allegorical Novel',
     },
     {
-      id: generateID(),
+      id: genID(),
       title: 'Crime and Punishment',
       category: 'Philosofical Novel',
     },
