@@ -24,7 +24,7 @@ const BooksList = ({ books, deleteBook }) => {
         </thead>
         <tbody>
           {
-            books.map(book => <Book key={uuid()} {...book} click={handleRemoveBook} />)
+            books.map(book => <Book key={uuid()} {...book} removeBook={handleRemoveBook} />)
           }
         </tbody>
       </table>
