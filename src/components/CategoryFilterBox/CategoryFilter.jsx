@@ -5,7 +5,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import uuid from 'uuid';
-import { changeFilter } from '../../actions/index';
 import PropTypes from 'prop-types';
 
 const CategoryFilter = (props) => {
@@ -20,15 +19,18 @@ const CategoryFilter = (props) => {
     });
     return map;
   };
-  const handleChange = (event) => {
-    const { changeFilters } = props;
-    changeFilters(event.target.value);
+
+  const filterChangeHandler = (event) => {
+    const { filterChange } = props;
+    filterChange(event.target.value);
   };
 
+  const { filter } = props;
 
   return (
     <div className="categoryBox">
-      <select name="CategoryFilter" onChange={handleChange}>
+      <select name="CategoryFilter" value={filter} onChange={filterChangeHandler}>
+        <option key={uuid()} value="All">All</option>
         {
           categoryArray().map(category => (
             <option key={uuid()} value={category}>{category}</option>
@@ -42,18 +44,14 @@ const CategoryFilter = (props) => {
 const mapStateToProps = state => (
   {
     books: state.books,
-  }
-);
-
-const mapDispatchToProps = dispatch => (
-  {
-    changeFilters: category => dispatch(changeFilter(category)),
+    filter: state.filter,
   }
 );
 
 CategoryFilter.propTypes = {
   books: PropTypes.array.isRequired,
-  changeFilters: PropTypes.func.isRequired,
+  filterChange: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CategoryFilter);
+export default connect(mapStateToProps)(CategoryFilter);
