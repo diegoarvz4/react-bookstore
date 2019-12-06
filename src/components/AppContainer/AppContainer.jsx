@@ -21,9 +21,9 @@ const AppContainer = () => {
         </header>
       </div>
 
-      <div className="booksContainer">
-        <BookList />
-      </div>
+      
+      <BookList />
+      
 
       <div className="FootMenu">
         <BookForm />

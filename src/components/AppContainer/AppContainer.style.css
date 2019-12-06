@@ -66,4 +66,9 @@
           align-items: center;
   background-color: whitesmoke;
 }
+
+.booksContainer {
+  width: 80%;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=AppContainer.style.css.map */
