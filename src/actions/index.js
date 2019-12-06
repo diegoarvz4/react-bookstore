@@ -14,4 +14,11 @@ const removeBook = (id) => (
   }
 );
 
-export { addBook, removeBook };
+const changeFilter = (category) => (
+  {
+    type: actionTypes.changeFilter,
+    category,
+  }
+);
+
+export { addBook, removeBook, changeFilter };

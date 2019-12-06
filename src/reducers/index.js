@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import books from './books';
+import filter from './filter';
 import genID from '../lib/generateID';
 
 export const initialState = {
@@ -23,5 +24,5 @@ export const initialState = {
 };
 
 export default combineReducers({
-  books,
+  books, filter,
 });
