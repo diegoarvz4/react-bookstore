@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import uuid from 'uuid';
 import PropTypes from 'prop-types';
@@ -42,8 +43,9 @@ class BookForm extends Component {
 
   render() {
     const { bookCategories, category, title } = this.state;
+    const BookForm = styled.div``;
     return (
-      <div className="bookForm">
+      <BookForm>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="title">Title</label>
           <input type="text" value={title} onChange={this.handleChange} className="inputTitle" name="title" placeholder="title" />
@@ -56,7 +58,7 @@ class BookForm extends Component {
           </select>
           <button type="submit"> Submit </button>
         </form>
-      </div>
+      </BookForm>
     );
   }
 }

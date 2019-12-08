@@ -81,9 +81,7 @@ const AppContainer = () => {
         </header>
       </TopMenu>
       <BookList />
-      <div className="FootMenu">
-        <BookForm />
-      </div>
+      <BookForm />
     </BookContainer>
   );
 };
