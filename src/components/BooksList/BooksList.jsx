@@ -3,6 +3,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import uuid from 'uuid';
 import React from 'react';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../Book/Book';
@@ -24,8 +25,15 @@ const BooksList = (
   const handleFilterChange = (category) => {
     changeFilters(category);
   };
+
+  const BooksContainer = styled.div`
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-top: 30px;
+  `
   return (
-    <div className="booksContainer">
+    <BooksContainer>
       <CategoryFilter filterChange={handleFilterChange} />
       <div className="booksContainer-list">
         {
@@ -34,7 +42,7 @@ const BooksList = (
             : books.filter(book => book.category === filter).map(book => <Book key={uuid()} {...book} removeBook={handleRemoveBook} />)
         }
       </div>
-    </div>
+    </BooksContainer>
   );
 };
 
