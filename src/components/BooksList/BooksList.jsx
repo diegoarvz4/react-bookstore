@@ -10,6 +10,29 @@ import Book from '../Book/Book';
 import CategoryFilter from '../CategoryFilterBox/CategoryFilter';
 import { removeBook, changeFilter } from '../../actions/index';
 
+const BooksContainer = styled.div`
+height: 60vh;
+overflow: scroll;
+overflow-x: hidden;
+margin-top: 30px;
+  div {
+    text-align: center;
+    padding: 0 30px;
+    select{
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 20px;
+      font-family: Montserrat;
+      width: 20%;
+    }
+    div {
+      text-align: left;
+    }
+  }
+`;
+
+
 const BooksList = (
   {
     books,
@@ -25,13 +48,6 @@ const BooksList = (
   const handleFilterChange = (category) => {
     changeFilters(category);
   };
-
-  const BooksContainer = styled.div`
-    height: 300px;
-    overflow: scroll;
-    overflow-x: hidden;
-    margin-top: 30px;
-  `
   return (
     <BooksContainer>
       <CategoryFilter filterChange={handleFilterChange} />

@@ -16,8 +16,9 @@ const Book = (props) => {
     width: 70vw;
   
     .bookContainer-id{
-      font-weight: bold;
+      font-weight: bold;      
       padding: 10px;
+      padding-left: 0;
     }
   
     .bookContainer-bookName{
@@ -27,6 +28,7 @@ const Book = (props) => {
       }
   
       .bookContainer-bookName__utilites{
+        padding: 0;
         margin-top: 10px;
         font-size: 14px;
         display: flex;

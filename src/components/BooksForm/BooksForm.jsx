@@ -8,6 +8,49 @@ import PropTypes from 'prop-types';
 import { addBook } from '../../actions/index';
 import genID from '../../lib/generateID';
 
+const BookFormContainer = styled.div`
+width: 90%;
+margin: 0 auto 40px auto;
+form {
+  label {
+    width: 174px;
+    height: 24px;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.18px;
+    color: #888888;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.form-components {
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
+  input, select, button {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: Montserrat;
+  }
+  input {
+    width: 60%;
+  }
+  select {
+    width: 20%;
+  }
+  button {
+    width: 10%;
+  }
+}
+`;
+
 class BookForm extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +66,14 @@ class BookForm extends Component {
     this.setState({
       [name]: value,
     });
+  }
+
+  handleInputChange = (event) => {
+    const { value } = event.target;
+    this.setState({
+      title: value,
+    })
+
   }
 
   handleSubmit = (event) => {
@@ -43,59 +94,15 @@ class BookForm extends Component {
 
   render() {
     const { bookCategories, category, title } = this.state;
-    const componentHeight = '50px';
-    const BookForm = styled.div`
-      width: 90%;
-      margin: 0 auto;
-      margin-bottom: 100px;
-      form {
-        label {
-          width: 174px;
-          height: 24px;
-          font-family: Montserrat;
-          font-size: 20px;
-          font-weight: bold;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          letter-spacing: -0.18px;
-          color: #888888;
-          display: block;
-          margin-bottom: 20px;
-        }
-      }
-
-      .form-components {
-        display: flex;
-        flex-wrap: no-wrap;
-        justify-content: space-between;
-        input, select, button {
-          border: 1px solid lightgray;
-          border-radius: 5px;
-          padding: 10px;
-          font-size: 20px;
-          font-family: Montserrat;
-        }
-        input {
-          width: 60%;
-        }
-        select {
-          width: 20%;
-        }
-        button {
-          width: 10%;
-        }
-      }
-    `;
     return (
-      <BookForm>
+      <BookFormContainer>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="title">Add New Book</label>
           <div className="form-components">
-            <input type="text" value={title} onChange={this.handleChange} className="inputTitle" name="title" placeholder="title" />
+            <input type='text' name='title' value={this.state.title} onChange={this.handleInputChange} />
             <select name="category" value={category} onChange={this.handleChange}>
               {
-                bookCategories.map(cat => (
+                bookCategories.map((cat) => (
                   <option key={uuid()} value={cat}>{cat}</option>
                 ))
               }
@@ -103,7 +110,7 @@ class BookForm extends Component {
             <button type="submit"> Submit </button>
           </div>
         </form>
-      </BookForm>
+      </BookFormContainer>
     );
   }
 }
