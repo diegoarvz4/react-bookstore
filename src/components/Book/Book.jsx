@@ -2,13 +2,13 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
+import colors from '../../lib/colors';
 
 const Book = (props) => {
   const BookContainer = styled.div`
     border-radius: 4px;
     border: solid 1px #e8e8e8;
-    background-color: #ffffff;
+    background-color: ${colors.lightblue};
     display: flex;
     align-items: center;
     position: relative;
@@ -37,7 +37,7 @@ const Book = (props) => {
         font-style: normal;
         line-height: normal;
         letter-spacing: normal;
-        color: #4386bf;
+        color: ${colors.greengray};
         span{
           cursor: pointer;
           display: inline;
@@ -63,7 +63,7 @@ const Book = (props) => {
       font-style: normal;
       line-height: normal;
       letter-spacing: -0.2px;
-      color: #121212;
+      color: ${colors.graybluedark};
     }
   
     .bookContainer-category{
@@ -83,9 +83,9 @@ const Book = (props) => {
       right: 25px;
       width: 84px;
       height: 33px;
-      border: 1px solid #0290ff;
+      border: 1px solid ${colors.grayblue};
       border-radius: 3px;
-      background-color: #0290ff;
+      background-color: ${colors.grayblue};
       font-size: 13px;
       font-weight: 300;
       font-stretch: normal;

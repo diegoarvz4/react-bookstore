@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import Book from '../Book/Book';
 import CategoryFilter from '../CategoryFilterBox/CategoryFilter';
 import { removeBook, changeFilter } from '../../actions/index';
+import colors from '../../lib/colors';
 
 const BooksContainer = styled.div`
 height: 60vh;
@@ -25,6 +26,8 @@ margin-top: 30px;
       font-size: 20px;
       font-family: Montserrat;
       width: 20%;
+      background-color: ${colors.grayblue};
+      color: ${colors.graybluedark};
     }
     div {
       text-align: left;

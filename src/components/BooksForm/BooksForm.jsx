@@ -7,6 +7,7 @@ import uuid from 'uuid';
 import PropTypes from 'prop-types';
 import { addBook } from '../../actions/index';
 import genID from '../../lib/generateID';
+import colors from '../../lib/colors';
 
 const BookFormContainer = styled.div`
 width: 90%;
@@ -38,6 +39,9 @@ form {
     padding: 10px;
     font-size: 20px;
     font-family: Montserrat;
+    background-color: ${colors.grayblue};
+    color: ${colors.graybluedark};
+    font-weight: bold;
   }
   input {
     width: 60%;
@@ -47,6 +51,8 @@ form {
   }
   button {
     width: 10%;
+    background-color: ${colors.lightblue};
+    color: ${colors.graybluedark};
   }
 }
 `;

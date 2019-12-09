@@ -20,6 +20,11 @@ export const initialState = {
       title: 'Crime and Punishment',
       category: 'Philosofical Novel',
     },
+    {
+      id: genID(),
+      title: 'El Laberinto de la Soledad',
+      category: 'Novel',
+    },
   ],
 };
 
