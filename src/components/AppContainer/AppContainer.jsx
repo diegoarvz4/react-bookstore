@@ -12,7 +12,7 @@ const AppContainer = () => {
     padding: 30px 100px;
     background-color: gray;
     position: relative;
-    h2 {
+    h2 {      
       display: inline-block;
       font-family: Montserrat;
       font-size: 30px;
@@ -59,8 +59,7 @@ const AppContainer = () => {
       align-items: center;
       background-color: whitesmoke;
     }
-  }
-  `;
+  }`;
 
   const BookContainer = styled.div`
     margin: 0 auto;
