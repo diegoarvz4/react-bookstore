@@ -78,8 +78,7 @@ class BookForm extends Component {
     const { value } = event.target;
     this.setState({
       title: value,
-    })
-
+    });
   }
 
   handleSubmit = (event) => {
@@ -105,7 +104,7 @@ class BookForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="title">Add New Book</label>
           <div className="form-components">
-            <input type='text' name='title' value={this.state.title} onChange={this.handleInputChange} />
+            <input type="text" name="title" value={title} onChange={this.handleInputChange} />
             <select name="category" value={category} onChange={this.handleChange}>
               {
                 bookCategories.map((cat) => (
