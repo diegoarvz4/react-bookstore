@@ -13,7 +13,7 @@ const Book = (props) => {
     align-items: center;
     position: relative;
     margin: 20px 0;
-    width: 1300px;
+    width: 70vw;
   
     .bookContainer-id{
       font-weight: bold;

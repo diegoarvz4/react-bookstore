@@ -66,6 +66,12 @@ const AppContainer = () => {
     display: flex;
     flex-direction: column;
     align-items: center;
+    hr {
+      border: none;
+      border-bottom: 1px solid lightgray;
+      width: 90%;
+      margin: 40px 0;
+    }
   `;
   return (
     <BookContainer>
@@ -80,6 +86,7 @@ const AppContainer = () => {
         </header>
       </TopMenu>
       <BookList />
+      <hr />
       <BookForm />
     </BookContainer>
   );

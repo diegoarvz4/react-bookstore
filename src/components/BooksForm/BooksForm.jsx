@@ -43,20 +43,65 @@ class BookForm extends Component {
 
   render() {
     const { bookCategories, category, title } = this.state;
-    const BookForm = styled.div``;
+    const componentHeight = '50px';
+    const BookForm = styled.div`
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 100px;
+      form {
+        label {
+          width: 174px;
+          height: 24px;
+          font-family: Montserrat;
+          font-size: 20px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: -0.18px;
+          color: #888888;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+
+      .form-components {
+        display: flex;
+        flex-wrap: no-wrap;
+        justify-content: space-between;
+        input, select, button {
+          border: 1px solid lightgray;
+          border-radius: 5px;
+          padding: 10px;
+          font-size: 20px;
+          font-family: Montserrat;
+        }
+        input {
+          width: 60%;
+        }
+        select {
+          width: 20%;
+        }
+        button {
+          width: 10%;
+        }
+      }
+    `;
     return (
       <BookForm>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="title">Title</label>
-          <input type="text" value={title} onChange={this.handleChange} className="inputTitle" name="title" placeholder="title" />
-          <select name="category" value={category} onChange={this.handleChange}>
-            {
-              bookCategories.map(cat => (
-                <option key={uuid()} value={cat}>{cat}</option>
-              ))
-            }
-          </select>
-          <button type="submit"> Submit </button>
+          <label htmlFor="title">Add New Book</label>
+          <div className="form-components">
+            <input type="text" value={title} onChange={this.handleChange} className="inputTitle" name="title" placeholder="title" />
+            <select name="category" value={category} onChange={this.handleChange}>
+              {
+                bookCategories.map(cat => (
+                  <option key={uuid()} value={cat}>{cat}</option>
+                ))
+              }
+            </select>
+            <button type="submit"> Submit </button>
+          </div>
         </form>
       </BookForm>
     );
