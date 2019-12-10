@@ -3,11 +3,38 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import uuid from 'uuid';
 import React from 'react';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../Book/Book';
 import CategoryFilter from '../CategoryFilterBox/CategoryFilter';
 import { removeBook, changeFilter } from '../../actions/index';
+import colors from '../../lib/colors';
+
+const BooksContainer = styled.div`
+height: 60vh;
+overflow: scroll;
+overflow-x: hidden;
+margin-top: 30px;
+  div {
+    text-align: center;
+    padding: 0 30px;
+    select{
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 20px;
+      font-family: Montserrat;
+      width: 20%;
+      background-color: ${colors.grayblue};
+      color: ${colors.graybluedark};
+    }
+    div {
+      text-align: left;
+    }
+  }
+`;
+
 
 const BooksList = (
   {
@@ -25,25 +52,16 @@ const BooksList = (
     changeFilters(category);
   };
   return (
-    <div>
+    <BooksContainer>
       <CategoryFilter filterChange={handleFilterChange} />
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            filter === 'All'
-              ? books.map(book => <Book key={uuid()} {...book} removeBook={handleRemoveBook} />)
-              : books.filter(book => book.category === filter).map(book => <Book key={uuid()} {...book} removeBook={handleRemoveBook} />)
-          }
-        </tbody>
-      </table>
-    </div>
+      <div className="booksContainer-list">
+        {
+          filter === 'All'
+            ? books.map(book => <Book key={uuid()} {...book} removeBook={handleRemoveBook} />)
+            : books.filter(book => book.category === filter).map(book => <Book key={uuid()} {...book} removeBook={handleRemoveBook} />)
+        }
+      </div>
+    </BooksContainer>
   );
 };
 
