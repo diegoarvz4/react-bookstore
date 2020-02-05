@@ -1,6 +1,6 @@
 # React Bookstore CMS
 
-> This is an organizer for a book library, that currently lets you add and remove books.
+> This is an organizer for a book library, that currently lets you add, filter and remove books.
 
 # Screenshot
 
