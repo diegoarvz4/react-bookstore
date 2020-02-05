@@ -8,7 +8,7 @@
 
 ## Live Demo
 
-> https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+React+App.png
+> https://jrdabookstore.herokuapp.com/
 
 ## Built With
 
