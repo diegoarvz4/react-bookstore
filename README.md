@@ -1,10 +1,14 @@
 # React Bookstore CMS
 
-> This project is build as a part of the Microverse Full Time Curriculum, being the final project in the React/Redux Section
+> This is an organizer for a book library, that currently lets you add and remove books.
 
-# Screenshot coming Soon!
+# Screenshot
 
-This is an organizer for a book library, that currently lets you add and remove books. More feature to be implemented in the future.
+![BookStore](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+React+App.png)
+
+## Live Demo
+
+> https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+React+App.png
 
 ## Built With
 
@@ -17,15 +21,14 @@ This is an organizer for a book library, that currently lets you add and remove 
 - uuid
 - Enzyme
 
-## Live Demo
+## Skills
 
- ### Coming Soon!
-
+- Global State Management
+- Front-end design
+- Test-driven development
+- Stateful and Stateless Components
 
 ## Getting Started
-
-
-
 
 To get a local copy up and running follow these simple example steps.
 
@@ -44,9 +47,6 @@ To get a local copy up and running follow these simple example steps.
 
 ## Run tests
   To run the tests simple run the following command on your terminal: `npm test`
-## Deployment
-  Comming Soon
-
 
 # Authors
 
