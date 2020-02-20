@@ -1,10 +1,14 @@
 # React Bookstore CMS
 
-> This is an organizer for a book library, that currently lets you add, filter and remove books.
+> This is an organizer for a book library, that currently lets you add, filter and remove books. This app works without authentication so are free to make Create, Read, and Delete requests.
 
 # Screenshot
 
 ![BookStore](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+React+App.png)
+
+# API Endpoint
+
+> https://safe-sierra-76064.herokuapp.com/
 
 ## Live Demo
 
