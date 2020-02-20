@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import uuid from 'uuid';
 import PropTypes from 'prop-types';
-import { addBook } from '../../actions/index';
+import { addBook } from '../../store/actions/index';
 import genID from '../../lib/generateID';
 import colors from '../../lib/colors';
 

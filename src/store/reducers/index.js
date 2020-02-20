@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import books from './books';
 import filter from './filter';
-import genID from '../lib/generateID';
+import genID from '../../lib/generateID';
 
 export const initialState = {
   books: [

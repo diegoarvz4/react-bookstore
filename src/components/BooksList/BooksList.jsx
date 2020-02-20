@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../Book/Book';
 import CategoryFilter from '../CategoryFilterBox/CategoryFilter';
-import { removeBook, changeFilter } from '../../actions/index';
+import { removeBook, changeFilter } from '../../store/actions/index';
 import colors from '../../lib/colors';
 
 const BooksContainer = styled.div`
