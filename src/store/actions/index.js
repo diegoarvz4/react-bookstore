@@ -1,4 +1,5 @@
 import actionTypes from './actionTypes';
+import serviceURL from '../../apiEndPoint';
 
 const addBook = (book) => (
   {
@@ -29,22 +30,29 @@ const addBooks = (books) => (
 );
 
 const fetchBooks = () => (dispatch => (
-  fetch('http://localhost:3000/books')
+  fetch(`${serviceURL}/books`)
     .then(res => res.json())
     .then(res => dispatch(addBooks(res)))
 ));
 
 const postBook = (book) => (dispatch => (
-  fetch('http://localhost:3000/books', {
+  fetch(`${serviceURL}/books`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: JSON.stringify(book),
   })
     .then(res => res.json())
     .then(res => dispatch(addBook(res)))
+    .catch(err => console.log(err.message))
+));
+
+const deleteBook = (id) => (dispatch => (
+  fetch(`${serviceURL}/books/${id}`, {
+    method: 'DELETE',
+  })
+    .then(() => dispatch(removeBook(id)))
     .catch(err => console.log(err.message))
 ));
 
@@ -55,4 +63,5 @@ export {
   changeFilter,
   fetchBooks,
   postBook,
+  deleteBook,
 };

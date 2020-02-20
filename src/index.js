@@ -12,14 +12,9 @@ import App from './App';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const logger = store => next => action => {
-  console.log('Middleware', action);
-  next(action);
-};
-
 const store = createStore(rootReducer,
   preLoadedState,
-  composeEnhancers(applyMiddleware(logger, thunk)));
+  composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store={store}>
