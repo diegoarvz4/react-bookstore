@@ -3,7 +3,7 @@ import books from './books';
 import filter from './filter';
 import genID from '../../lib/generateID';
 
-export const initialState = {
+export const preLoadedState = {
   books: [
     {
       id: genID(),

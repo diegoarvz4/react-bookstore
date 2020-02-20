@@ -5,8 +5,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import uuid from 'uuid';
 import PropTypes from 'prop-types';
-import { addBook } from '../../store/actions/index';
-import genID from '../../lib/generateID';
+import { postBook, fetchBooks } from '../../store/actions/index';
 import colors from '../../lib/colors';
 
 const BookFormContainer = styled.div`
@@ -67,6 +66,11 @@ class BookForm extends Component {
     };
   }
 
+  componentDidMount = () => {
+    console.log(this.props)
+    this.props.onFetchBooks();
+  }
+
   handleChange = (event) => {
     const { value, name } = event.target;
     this.setState({
@@ -86,9 +90,10 @@ class BookForm extends Component {
     const { title, category } = this.state;
     const { createBook } = this.props;
     const book = {
-      id: genID(),
-      title,
-      category,
+      book: {
+        title,
+        category,
+      },
     };
     createBook(book);
     this.setState({
@@ -121,7 +126,8 @@ class BookForm extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  createBook: (book) => dispatch(addBook(book)),
+  createBook: (book) => dispatch(postBook(book)),
+  onFetchBooks: () => dispatch(fetchBooks()),
 });
 
 
